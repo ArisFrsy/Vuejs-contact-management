@@ -1,5 +1,6 @@
 <template>
     <div class="contact-manager">
+        <vue-confirm-dialog></vue-confirm-dialog>
         <div class="container mt-3">
             <div class="row">
                 <div class="col">
@@ -11,7 +12,7 @@
                     <form>
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Search Name">
+                                <input type="text" class="form-control" placeholder="Search Name !Gimmick">
                             </div>
                             <div class="col">
                                 <input type="submit" class="btn btn-dark">
@@ -104,23 +105,39 @@ export default {
     },
     methods: {
         clickDeleteContact: async function (contactId) {
-            try {
-                this.loading = true;
-                let response = await ContactService.DeleteContact(contactId);
-                if (response) {
-                    let response = await ContactService.GetAllContacts();
-                    this.contacts = response.data;
-                    this.loading = false;
+            this.$confirm(
+                {
+                    message: 'Are you sure?',
+                    button: {
+                        no: 'No',
+                        yes: 'Yes'
+                    },
+                    /**
+                    * Callback Function
+                    * @param {Boolean} confirm
+                    */
+                    callback: async confirm => {
+                        if (confirm) {
+                            try {
+                                this.loading = true;
+                                let response = await ContactService.DeleteContact(contactId);
+                                if (response) {
+                                    let response = await ContactService.GetAllContacts();
+                                    this.contacts = response.data;
+                                    this.loading = false;
+                                }
+                            } catch (error) {
+                                this.errorMessage = error;
+                                this.loading = false;
+                            }
+                        }
+                    }
                 }
-            } catch (error) {
-                this.errorMessage = error;
-                this.loading = false;
-            }
+            )
         }
     }
 }
 </script>
 
 <style>
-
 </style>

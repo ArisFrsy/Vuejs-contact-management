@@ -8,7 +8,10 @@ import './styles.css'
 
 import router from './router'
 
+import VueConfirmDialog from 'vue-confirm-dialog'
 
+Vue.use(VueConfirmDialog)
+Vue.component('vue-confirm-dialog', VueConfirmDialog.default)
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin

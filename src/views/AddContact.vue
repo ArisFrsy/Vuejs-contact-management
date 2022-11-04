@@ -13,19 +13,19 @@
                     <div class="col-md-5">
                         <form @submit.prevent="submitCreate()">
                             <div class="mb-2">
-                                <input v-model="contact.name" type="text" class="form-control" placeholder="Name">
+                                <input required v-model="contact.name" type="text" class="form-control" placeholder="Name">
                             </div>
                             <div class="mb-2">
-                                <input v-model="contact.photo" type="text" class="form-control" placeholder="Photo Url">
+                                <input required v-model="contact.photo" type="text" class="form-control" placeholder="Photo Url">
                             </div>
                             <div class="mb-2">
-                                <input v-model="contact.email" type="email" class="form-control" placeholder="Email">
+                                <input required v-model="contact.email" type="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="mb-2">
-                                <input v-model="contact.mobile" type="number" class="form-control" placeholder="Mobile">
+                                <input required v-model="contact.mobile" type="number" class="form-control" placeholder="Mobile">
                             </div>
                             <div class="mb-2">
-                                <textarea v-model="contact.address" type="text" class="form-control"
+                                <textarea required v-model="contact.address" type="text" class="form-control"
                                     placeholder="Address"></textarea>
                             </div>
                             <div class="mb-2">
