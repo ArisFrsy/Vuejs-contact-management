@@ -19,10 +19,10 @@
                             <input v-model="contact.photo" type="text" class="form-control" placeholder="Photo Url">
                         </div>
                         <div class="mb-2">
-                            <input v-model="contact.email" type="text" class="form-control" placeholder="Email">
+                            <input v-model="contact.email" type="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="mb-2">
-                            <input v-model="contact.mobile" type="text" class="form-control" placeholder="Mobile">
+                            <input v-model="contact.mobile" type="number" class="form-control" placeholder="Mobile">
                         </div>
                         <div class="mb-2">
                             <textarea v-model="contact.address" type="text" class="form-control" placeholder="Address"></textarea>
