@@ -50,6 +50,7 @@ Install Vue Confirm Dialog
 
 ```
 npm install vue-confirm-dialog@1.0.2 --save
+
 ```
 
 ### Run Server
