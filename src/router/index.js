@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/HomeView.vue'
-import ContactForm from '../views/ContactForm.vue'
+import ContactManager from '../views/ContactManager.vue'
+import AddContact from '../views/AddContact.vue'
+import EditContact from '../views/EditContact.vue'
+import ViewContact from '../views/ViewContact.vue'
+import PageNotFound from '../views/PageNotFound.vue'
   
 Vue.use(VueRouter)
   
@@ -9,26 +13,33 @@ const routes = [
     {
         path: '/',
         name: 'Home',
+        redirect : '/contact',
         component: Home
     },
     {
-        path: '/ContactForm',
-        name: 'ContactForm',
-        component: ContactForm
+        path: '/contact',
+        name: 'ContactManager',
+        component: ContactManager
     },
-    //  Added our new route file named profile.vue
     {
-        path: '/about',
-        name: 'About',
-        // The route level code-splitting
-        // this generates a separate chunk 
-        // (about.[hash].js) for this route
-        // which is lazy-loaded when the
-        // route is visited.
-        component:()=> import(
-            /* webpackChunkName: "about" */ 
-            '../views/AboutView.vue'
-        )
+        path: '/contact/add',
+        name: 'AddContact',
+        component: AddContact
+    },
+    {
+        path: '/contact/edit/:contactId',
+        name: 'EditContact',
+        component: EditContact
+    },
+    {
+        path: '/contact/view/:contactId',
+        name: 'ViewContact',
+        component: ViewContact
+    },
+    {
+        path: '**',
+        name: 'PageNotFound',
+        component: PageNotFound
     },
 ]
   
