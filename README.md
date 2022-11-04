@@ -32,7 +32,38 @@ Install FontAwasome
 
 ```
 npm install --save @fortawesome/fontawesome-free
+```
 
+Install Axios
+
+```
+npm i axios
+```
+
+Install J-son Server
+
+```
+npm i j-son server
+```
+
+Install Vue Confirm Dialog
+
+```
+npm install --save vue-confirm-dialog
+```
+
+### Run Server
+
+Vue Run Server (Directory:./CONTACT-MANAGEMENT)
+
+```
+npm run serve
+```
+
+Vue J-Son Server (Directory:./CONTACT-MANAGEMENT/server)
+
+```
+npm start
 ```
 
 ### Compiles and minifies for production
