@@ -49,7 +49,7 @@ npm i j-son server
 Install Vue Confirm Dialog
 
 ```
-npm install --save vue-confirm-dialog
+npm install vue-confirm-dialog@1.0.2 --save
 ```
 
 ### Run Server
